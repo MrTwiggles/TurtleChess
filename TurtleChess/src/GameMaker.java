@@ -7,6 +7,5 @@ public class GameMaker {
 		Board board = new Board(layout, 100);
 
 		ClickEventHandler clicker = new ClickEventHandler(board, layout);
-
 	}
 }
