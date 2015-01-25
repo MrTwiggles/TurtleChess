@@ -1,72 +1,47 @@
-
 public class Layout {
 	private Piece[][] layout;
 
 	public Layout() {
+
+		layout = new Piece[8][8];
 
 		initialArrangement();
 	}
 
 	private void initialArrangement() {
 
-		layout = new Piece[8][8];
+		layout[0][0] = new Rook(0, 0, true);
+		layout[0][1] = new Knight(0, 1, true);
+		layout[0][2] = new Bishop(0, 2, true);
+		layout[0][3] = new Queen(0, 3, true);
+		layout[0][4] = new King(0, 4, true);
+		layout[0][5] = new Bishop(0, 5, true);
+		layout[0][6] = new Knight(0, 6, true);
+		layout[0][7] = new Rook(0, 7, true);
 
-		for (int i = 0; i < 8; i++) {
+		layout[7][0] = new Rook(7, 0, false);
+		layout[7][1] = new Knight(7, 1, false);
+		layout[7][2] = new Bishop(7, 2, false);
+		layout[7][3] = new Queen(7, 3, false);
+		layout[7][4] = new King(7, 4, false);
+		layout[7][5] = new Bishop(7, 5, false);
+		layout[7][6] = new Knight(7, 6, false);
+		layout[7][7] = new Rook(7, 7, false);
+
+		for (int i = 1; i < 8; i += 5) {
 			for (int j = 0; j < 8; j++) {
 
-				// Bönder
-				if (i == 1) {
+				if (i == 1)
 					layout[i][j] = new Pawn(i, j, true);
-				}
-				if (i == 6) {
+				else
 					layout[i][j] = new Pawn(i, j, false);
-				}
-				// Torn
-				if ((i == 0 && j == 0) || (i == 0 && j == 7)
-						|| (i == 7 && j == 0) || (i == 7 && j == 7)) {
-					if (i == 0) {
-						layout[i][j] = new Rook(i, j, true);
-					} else {
-						layout[i][j] = new Rook(i, j, false);
-					}
-				}
-				// Hästar
-				if ((i == 0 && j == 1) || (i == 0 && j == 6)
-						|| (i == 7 && j == 1) || (i == 7 && j == 6)) {
-					if (i == 0) {
-						layout[i][j] = new Knight(i, j, true);
-					} else {
-						layout[i][j] = new Knight(i, j, false);
-					}
-				}
-				// Löpare
-				if ((i == 0 && j == 2) || (i == 0 && j == 5)
-						|| (i == 7 && j == 2) || (i == 7 && j == 5)) {
-					if (i == 0) {
-						layout[i][j] = new Bishop(i, j, true);
-					} else {
-						layout[i][j] = new Bishop(i, j, false);
-					}
-				}
-				// Dam
-				if ((i == 0 && j == 4) || (i == 7 && j == 3)) {
-					if (i == 0) {
-						layout[i][j] = new Queen(i, j, true);
-					} else {
-						layout[i][j] = new Queen(i, j, false);
-					}
-				}
-				// Knug
-				if ((i == 0 && j == 3) || (i == 7 && j == 4)) {
-					if (i == 0) {
-						layout[i][j] = new King(i, j, true);
-					} else {
-						layout[i][j] = new King(i, j, false);
-					}
-				}
+			}
+		}
 
-				if (i != 1 && i != 0 && i != 7 & i != 6)
-					layout[i][j] = new Piece();
+		for (int i = 2; i < 6; i++) {
+			for (int j = 0; j < 8; j++) {
+
+				layout[i][j] = new Piece();
 			}
 		}
 	}

@@ -1,5 +1,3 @@
-import se.lth.cs.window.SimpleWindow;
-
 public class ClickEventHandler {
 
 	public ClickEventHandler(Board board, Layout layout) {

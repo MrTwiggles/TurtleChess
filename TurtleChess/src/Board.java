@@ -1,8 +1,5 @@
 import java.awt.Color;
 
-import se.lth.cs.p.ovn.turtle.Turtle;
-import se.lth.cs.window.SimpleWindow;
-
 public class Board {
 
 	private SimpleWindow window;
@@ -75,7 +72,6 @@ public class Board {
 		}
 
 		turtle.forward(20);
-
 	}
 
 	public void updateWindow() {
