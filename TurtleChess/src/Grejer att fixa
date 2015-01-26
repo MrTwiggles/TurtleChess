@@ -1,1 +1,22 @@
-Regelbok för hur Pieces får röra sig.
+
+
+Implementera Rules
+
+Fixa i SimpleWindow
+	Hindra resize - eller fixa update i realtid
+	Meny
+
+Behövs Peice.setPos?
+	Kan man inte lösa allt med Layout[][]?
+	
+Behövs Piece på tomma rutor?
+	Kommer null facka allt?
+	
+Ritmodeller för alla Pieces
+
+Sidofält med ägda pieces och draghistorik
+
+Indikator för aktiv spelare
+
+Kantindex på board, A1, A2 osv.
+
