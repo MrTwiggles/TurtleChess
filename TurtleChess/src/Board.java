@@ -79,6 +79,10 @@ public class Board {
 		drawGrid();
 		placePieces(layout);
 	}
+	
+	public Layout getLayout() {
+		return layout;
+	}
 
 	public int getScale() {
 		return scale;

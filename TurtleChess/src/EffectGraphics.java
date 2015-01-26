@@ -4,7 +4,6 @@ import java.awt.Color;
 public final class EffectGraphics {
 	
 	private static int scale;
-	private static Layout boardLayout;
 	private static SimpleWindow window;
 	private static Turtle turtle;
 	
@@ -12,10 +11,9 @@ public final class EffectGraphics {
 		
 	}
 	
-	public static void setFramework (Board board, Layout layout) {
+	public static void setPointer (Board board) {
 		
 		scale = board.getScale();
-		boardLayout = layout;
 		window = board.getWindow();
 		turtle = new Turtle(window, 0, 0);
 		turtle.penDown();
