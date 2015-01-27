@@ -1,7 +1,9 @@
-import se.lth.cs.window.SimpleWindow;
+
 
 public class Piece {
 
+	protected boolean hasMoved;
+	
 	protected int x;
 	protected int y;
 	protected boolean color;
@@ -30,5 +32,15 @@ public class Piece {
 
 	public boolean getColor() {
 		return color;
+	}
+
+	
+	//Behövs för Pawn:
+	public boolean hasMoved(){
+		return hasMoved;
+	}
+	
+	public void setMovedTrue(){
+		this.hasMoved = true;
 	}
 }
