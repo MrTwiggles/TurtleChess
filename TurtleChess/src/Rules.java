@@ -14,53 +14,59 @@ public final class Rules {
 	public static boolean isLegal(int x, int y, int newX, int newY) {
 		
 		if (isEmpty(Layout.getPiece(newX, newY)) || (isOpponent(Layout.getPiece(x, y), Layout.getPiece(newX, newY)))){
-			switch (Layout.getPiece(x, y).getLetter()){
+			
+			switch (Layout.getPiece(x, y).getLetter()) {
 			case 'P':
-				if (!Layout.getPiece(x, y).hasMoved()){
-					if (Layout.getPiece(x, y).getColor() && y == newY && newX <= x + 2){
+				if (!Layout.getPiece(x, y).hasMoved()) {
+					if (Layout.getPiece(x, y).getColor() && y == newY
+							&& newX <= x + 2) {
 						Layout.getPiece(x, y).setMovedTrue();
 						return true;
-					} else if (!Layout.getPiece(x, y).getColor() && y == newY && newX <= x - 2){
+					} else if (!Layout.getPiece(x, y).getColor() && y == newY
+							&& newX <= x - 2) {
 						Layout.getPiece(x, y).setMovedTrue();
 						return true;
 					}
 				} else {
-					if (Layout.getPiece(x, y).getColor() && y == newY && newX <= x + 1){
+					if (Layout.getPiece(x, y).getColor() && y == newY
+							&& newX <= x + 1) {
 						return true;
-					} else if (!Layout.getPiece(x, y).getColor() && y == newY && newX <= x - 1){
+					} else if (!Layout.getPiece(x, y).getColor() && y == newY
+							&& newX <= x - 1) {
 						return true;
 					}
 				}
 				break;
-				
+
 			case 'R':
-				if (y == newY || x == newX){
+				if (y == newY || x == newX) {
 					return true;
 				}
 				break;
-				
+
 			case 'B':
-				if (Math.abs(x - newX) == Math.abs(y - newY)){
+				if (Math.abs(x - newX) == Math.abs(y - newY)) {
 					return true;
 				}
 				break;
-				
+
 			case 'Q':
-				if ((y == newY || x == newX) || Math.abs(x - newX) == Math.abs(y - newY)){
+				if ((y == newY || x == newX)
+						|| Math.abs(x - newX) == Math.abs(y - newY)) {
 					return true;
 				}
 				break;
-				
+
 			case 'K':
-				if (Math.abs(x - newX) <= 1 && Math.abs(y - newY) <= 1){
+				if (Math.abs(x - newX) <= 1 && Math.abs(y - newY) <= 1) {
 					return true;
 				}
 				break;
-				
+
 			case 'k':
-				if (Math.abs(newX - x) == 2 && Math.abs(newY - y) == 1){
+				if (Math.abs(newX - x) == 2 && Math.abs(newY - y) == 1) {
 					return true;
-				} else if (Math.abs(newX - x) == 1 && Math.abs(newY - y) == 2){
+				} else if (Math.abs(newX - x) == 1 && Math.abs(newY - y) == 2) {
 					return true;
 				}
 				break;
