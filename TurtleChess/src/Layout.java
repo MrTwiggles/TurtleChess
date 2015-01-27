@@ -1,5 +1,5 @@
 public class Layout {
-	private Piece[][] layout;
+	private static Piece[][] layout;
 
 	public Layout() {
 
@@ -52,7 +52,7 @@ public class Layout {
 		piece.setPos(x, y);
 	}
 
-	public Piece getPiece(int x, int y) {
+	public static Piece getPiece(int x, int y) {
 		return layout[x][y];
 	}
 }

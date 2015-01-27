@@ -6,6 +6,6 @@ public class Pawn extends Piece {
 		this.y = y;
 		this.color = color;
 		this.letter = 'P';
+		this.hasMoved = false;
 	}
-
 }
